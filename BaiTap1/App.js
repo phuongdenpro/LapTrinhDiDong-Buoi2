@@ -32,7 +32,7 @@ export default function App() {
 
       <StatusBar style="auto" />
       <View styles={styles.view}>
-        <Text style={styles.textShow}>Hello :  {name}</Text>
+        <Text style={styles.textShow}>Hello: {name}</Text>
       </View>
     </SafeAreaView>
   );
