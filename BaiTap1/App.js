@@ -8,33 +8,34 @@ import {
   Button,
   View,
   Alert,
+  TouchableOpacity,
 } from "react-native";
 
-export default function App() {
+const App = () => {
   const [name, setName] = React.useState(null);
+  const [show, setShow] = React.useState(null);
+  const onPress = () => setShow("Hello: " + name);
   return (
     <SafeAreaView>
       <TextInput
         style={styles.textInput}
-        onChangeText={(text)=>setName(text)}
-         value={name}
-        placeholder="Name" 
+        onChangeText={(text) => setName(text)}
+        value={name}
+        placeholder="Name"
       ></TextInput>
-      <Button
-        style={styles.button}
-        title="Show"
-        color="#f194ff"
-        
-       // onPress={handle}
-      ></Button>
+      <View>
+        <TouchableOpacity style={styles.button} onPress={onPress}>
+          <Text>Show</Text>
+        </TouchableOpacity>
+      </View>
 
       <StatusBar style="auto" />
       <View styles={styles.view}>
-        <Text style={styles.textShow}>Hello: {name}</Text>
+        <Text style={styles.textShow}>{show}</Text>
       </View>
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   textInput: {
@@ -47,7 +48,11 @@ const styles = StyleSheet.create({
     width: 300,
     height: 50,
   },
-  button: {},
+  button: {
+    alignItems: "center",
+    backgroundColor: "#4630eb",
+    padding: 10,
+  },
   view: {},
   textShow: {
     marginVertical: 50,
@@ -55,4 +60,4 @@ const styles = StyleSheet.create({
     fontSize: 25,
   },
 });
-
+export default App;
