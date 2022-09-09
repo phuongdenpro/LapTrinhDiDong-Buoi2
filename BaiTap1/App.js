@@ -14,7 +14,7 @@ import {
 const App = () => {
   const [name, setName] = React.useState(null);
   const [show, setShow] = React.useState(null);
-  const onPress = () => setShow("Hello: " + name);
+  const onPress = () => setShow("Hello:  " + name);
   return (
     <SafeAreaView>
       <TextInput
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   view: {},
   textShow: {
     marginVertical: 50,
-    marginHorizontal: 100,
+    marginHorizontal: 10,
     fontSize: 25,
   },
 });
