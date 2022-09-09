@@ -12,21 +12,19 @@ import {
 
 export default function App() {
   const [name, setName] = React.useState(null);
-  
-  
-  
   return (
     <SafeAreaView>
       <TextInput
         style={styles.textInput}
-        onSubmitEditing={(text)=>setName(text)}
-        value={name}
+        onChangeText={(text)=>setName(text)}
+         value={name}
         placeholder="Name" 
       ></TextInput>
       <Button
         style={styles.button}
         title="Show"
         color="#f194ff"
+        
        // onPress={handle}
       ></Button>
 
@@ -55,8 +53,6 @@ const styles = StyleSheet.create({
     marginVertical: 50,
     marginHorizontal: 100,
     fontSize: 25,
-    justifyContent: "center",
-    alignItems: "center",
   },
 });
 
